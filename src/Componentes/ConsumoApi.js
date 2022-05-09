@@ -3,13 +3,13 @@ import Cats from './Cats';
 
 export default class ConsumoApi extends Component{
 
-  //Inicializo el state con un arreglo vacío
+  //Inicio el state con un arreglo vacío
       state = {
         cats: [],
           };
 
   
-  //Dentro del método componentDidMount realizo la peticion a la API
+  //En componentDidMount realizo la peticion a la API a traves del método fetch
       componentDidMount() {
         fetch("https://api.thecatapi.com/v1/images/search")
         .then((response) => {
@@ -19,7 +19,7 @@ export default class ConsumoApi extends Component{
           this.setState ({cats:datos});
           console.log(datos)
         })
-//Recarga la página cada 5 segundos
+//Recargo la página cada 5 segundos
         setTimeout(function(){
           window.location.reload(1);
        }, 5000);
